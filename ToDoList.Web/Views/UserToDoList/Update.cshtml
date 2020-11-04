@@ -1,0 +1,32 @@
+﻿@model ToDoList.Web.Models.UserToDoListViewModel
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header page-header-light">
+    <div class="page-header-content header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-right6 mr-2"></i> <span class="font-weight-semibold"></span>Edit</h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content">
+    <div class="card">
+        @using (Ajax.BeginForm("Update", null, new AjaxOptions { OnSuccess = "onsuccess", OnFailure = "OnFailure" }, new { @class = "form-validate-jquery", enctype = "multipart/form-data" }))
+        {
+            @Html.Partial("_CreateOrUpdate", Model)
+
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script src="~/JsFiles/UserToDoList.js"></script>
+

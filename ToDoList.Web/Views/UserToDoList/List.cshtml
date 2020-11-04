@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+
+    function OpenModelData() {
+
+         $.ajax({
+        type: "GET",
+        url: '@Url.Action("Create", "UserToDoList")',
+        contentType: "application/json; charset=utf-8",
+        datatype: "json",
+        success: function (data) {
+            debugger;
+            $('#myModalContent').html(data);
+         //   $('#callBackModal').modal(options);
+            $('#myModalContent').modal('show');
+        },
+        error: function () {
+            alert("Dynamic content load failed.");
+        }
+    });
+    }
+</script>
+<div class="page-header page-header-light">
+    <div class="page-header-content header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-right6 mr-2"></i> <span class="font-weight-semibold"></span>My ToDo List</h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+
+</div>
+
+<div class="content">
+    <div class="card">
+        <div class="card-header header-elements-inline">
+
+            <div class="header-elements">
+                <div class="list-icons">
+                    <a class="list-icons-item" data-action="collapse"></a>
+                    <a class="list-icons-item" data-action="reload"></a>
+                    <a class="list-icons-item" data-action="remove"></a>
+                </div>
+            </div>
+            <div>
+                <button onclick="OpenModelData()" class="btn btn-primary btn-labeled btn-labeled-left btn-lg text-white">
+                    <b><i class="icon-add"></i></b>Add New
+                </button>
+            </div>
+        </div>
+
+        <table class="table datatable-js">
+            <thead>
+                <tr>
+
+                    <th>Title</th>
+                    <th>Due Date</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<div id="myModalContent" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/JsFiles/UserToDoList.js"></script>
+
+
+<script>
+    $(window).on('load', function () {
+        if (localStorage.getItem("success") !== null) {
+            new Noty({
+                text: localStorage.getItem("success"),
+                type: 'success'
+            }).show();
+            localStorage.removeItem("success");
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        DatatableDataSources.init();
+    });
+</script>
+
+

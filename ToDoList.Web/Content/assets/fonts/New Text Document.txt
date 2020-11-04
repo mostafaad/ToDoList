@@ -1,0 +1,34 @@
+/* Light */
+@font-face {
+    font-family: "JF Flat Light";
+    src: url('assets/typo/jozoor/JF-Flat-light.eot');
+    src: url('assets/typo/jozoor/JF-Flat-light.eot?#iefix') format('embedded-opentype'),
+    url('assets/typo/jozoor/JF-Flat-light.svg#JF Flat Light') format('svg'),
+    url('assets/typo/jozoor/JF-Flat-light.woff') format('woff'),
+    url('assets/typo/jozoor/JF-Flat-light.ttf') format('truetype');
+    font-weight: 300 !important;
+    font-style: normal!important;
+}
+
+/* Regular */
+@font-face {
+    font-family: "JF Flat Regular";
+    src: url('assets/typo/jozoor/JF-Flat-regular.eot');
+    src: url('assets/typo/jozoor/JF-Flat-regular.eot?#iefix') format('embedded-opentype'),
+    url('assets/typo/jozoor/JF-Flat-regular.svg#JF Flat Regular') format('svg'),
+    url('assets/typo/jozoor/JF-Flat-regular.woff') format('woff'),
+    url('assets/typo/jozoor/JF-Flat-regular.ttf') format('truetype');
+    font-weight: normal!important;
+    font-style: normal!important;
+}
+
+/* Medium */
+@font-face {
+    font-family: "JF Flat Medium";
+    src: url('assets/typo/jozoor/JF-Flat-medium.eot');
+    src: url('assets/typo/jozoor/JF-Flat-medium.eot?#iefix') format('embedded-opentype'),
+    url('assets/typo/jozoor/JF-Flat-medium.svg#JF Flat Medium') format('svg'),
+    url('assets/typo/jozoor/JF-Flat-medium.woff') format('woff'),
+    url('assets/typo/jozoor/JF-Flat-medium.ttf') format('truetype');
+    font-weight: 600!important;
+    font-style: normal!important;
